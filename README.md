@@ -7,7 +7,8 @@ Deskripsi ProyekProyek ini mengimplementasikan model Deep Learning berbasis Citr
 ⚙️ Metodologi & Alur KerjaPipeline Data: Data ditarik langsung via Hugging Face API. 
 - Resolusi gambar asli dikonversi menjadi 512 x 512 piksel untuk efisiensi VRAM GPU T4 Google Colab.
 - Penyederhanaan Label (Class Re-mapping): Mereduksi 39 kelas bentik asli menjadi 4 kelas esensial: Background (0), Healthy Coral (1), Bleached Coral (2), dan Dead Coral (3) untuk mempercepat konvergensi model.
-- Arsitektur Model: Menggunakan arsitektur U-Net dengan tulang punggung (backbone) ResNet34 berbasis Transfer Learning (ImageNet pre-trained weights).Strategi Optimasi: * Penanganan class imbalance ekstrem menggunakan Class Weights Loss dengan rasio penalti $[0.5, 1.0, 4.0, 8.0]
+- Arsitektur Model: Menggunakan arsitektur U-Net dengan tulang punggung (backbone) ResNet34 berbasis Transfer Learning (ImageNet pre-trained weights).
+- Strategi Optimasi: * Penanganan class imbalance ekstrem menggunakan Class Weights Loss dengan rasio penalti [0.5, 1.0, 4.0, 8.0]
 - Akselerasi latihan menggunakan Mixed Precision Training (AMP FP16).
 - Penanganan overfitting menggunakan Model Checkpoint Tracking berbasis Validation Loss terendah.
 
